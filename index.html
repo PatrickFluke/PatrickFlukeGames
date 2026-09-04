@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Support & Info</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pine-dark: #1E2C1F;
+    --pine: #2B3B2A;
+    --pine-light: #3A4D38;
+    --cream: #F0E9D6;
+    --cream-dim: #C9C2AC;
+    --rust: #D2622E;
+    --river: #7FA6AE;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--pine-dark);
+    color: var(--cream);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  h1, h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--cream);
+  }
+
+  .kicker {
+    font-size: 0.95rem;
+    color: var(--cream-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
+  .game {
+    padding: 2.2rem 0;
+    border-top: 1px solid var(--pine-light);
+  }
+
+  .game:first-of-type { border-top: none; }
+
+  .game h2 { font-size: 1.5rem; }
+
+  .tagline {
+    color: var(--river);
+    font-size: 0.95rem;
+    margin: 0.35rem 0 0.9rem;
+  }
+
+  .game p.desc {
+    max-width: 46ch;
+    margin: 0 0 0.9rem;
+  }
+
+  .game a.store-link {
+    color: var(--rust);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .river-divider {
+    display: block;
+    width: 100%;
+    height: 28px;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .river-divider path {
+    fill: none;
+    stroke: var(--river);
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  section.support {
+    padding-top: 0.5rem;
+  }
+
+  section.support h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+
+  .plaque {
+    margin-top: 1.2rem;
+    padding: 1.1rem 1.3rem;
+    border: 1px solid var(--pine-light);
+    border-left: 3px solid var(--rust);
+  }
+
+  .plaque a {
+    color: var(--cream);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+  }
+
+  .plaque p { margin: 0.4rem 0 0; color: var(--cream-dim); font-size: 0.92rem; }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--pine-light);
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+  }
+
+  footer a { color: var(--cream-dim); }
+
+  a:focus-visible, a.store-link:focus-visible {
+    outline: 2px solid var(--river);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="kicker">Support & information</div>
+  <h1>Two small games, one dam, and a very short list of ways things go wrong.</h1>
+
+  <div class="game">
+    <h2>Beaver Rage</h2>
+    <p class="tagline">Arcade defense, iOS &amp; macOS</p>
+    <p class="desc">A self-aware beaver defends his dam from the garbage industry by hurling TNT at anything that floats too close. Free to play, with a one-time in-app purchase to remove ads.</p>
+    <a class="store-link" href="#">View on the App Store</a>
+  </div>
+
+  <div class="game">
+    <h2>Nimbus Lagoon</h2>
+    <p class="tagline"><!-- one-line description --></p>
+    <p class="desc"><!-- Placeholder: tell me what Nimbus Lagoon actually is (genre / premise) and I'll drop in a real one- or two-sentence description here. --></p>
+    <a class="store-link" href="#">View on the App Store</a>
+  </div>
+
+  <svg class="river-divider" viewBox="0 0 600 28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C60,4 120,24 180,14 C240,4 300,24 360,14 C420,4 480,24 540,14 C570,9 585,19 600,14"/>
+  </svg>
+
+  <section class="support">
+    <h2>Need help?</h2>
+    <p>If something's broken, a level won't load, or an ad won't go away after you paid to remove it &mdash; email me and I'll sort it out.</p>
+    <div class="plaque">
+      <a href="mailto:YOUR-ALIAS@icloud.com">YOUR-ALIAS@icloud.com</a>
+      <p>Usually get back to you within a few days.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026. Support page for iOS &amp; macOS titles. &middot; <a href="privacy.html">Privacy Policy</a>
+  </footer>
+
+</main>
+</body>
+</html>
