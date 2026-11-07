@@ -3,217 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>App Support & Info</title>
+<meta name="theme-color" content="#fffaf3">
+<title>Patrick Fluke — Games &amp; Support</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pine-dark: #1E2C1F;
-    --pine: #2B3B2A;
-    --pine-light: #3A4D38;
-    --cream: #F0E9D6;
-    --cream-dim: #C9C2AC;
-    --rust: #D2622E;
-    --river: #7FA6AE;
+    color-scheme: light;
+    --ink: #292a27;
+    --muted: #74736d;
+    --paper: #fffaf3;
+    --card: #ffffff;
+    --line: #eee7dc;
+    --accent: #c75d3b;
+    --accent-dark: #99442b;
+    --soft: #f8eee3;
+    --green: #557263;
   }
 
   * { box-sizing: border-box; }
 
   body {
     margin: 0;
-    background: var(--pine-dark);
-    color: var(--cream);
-    font-family: 'Work Sans', sans-serif;
-    line-height: 1.6;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
 
   main {
-    max-width: 640px;
+    width: min(100% - 2.5rem, 760px);
     margin: 0 auto;
-    padding: 4rem 1.5rem 5rem;
+    padding: 4.5rem 0 3rem;
+  }
+
+  .hero { margin-bottom: 2.75rem; }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem;
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .kicker::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #9ab39f;
   }
 
   h1, h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    margin: 0;
-    color: var(--cream);
-  }
-
-  .kicker {
-    font-size: 0.95rem;
-    color: var(--cream-dim);
-    margin-bottom: 0.5rem;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: -0.045em;
   }
 
   h1 {
-    font-size: 2.1rem;
-    line-height: 1.2;
-    margin-bottom: 3rem;
+    margin: 0;
+    font-size: clamp(2.7rem, 8vw, 4.5rem);
+    line-height: 1.04;
+    font-weight: 800;
   }
+
+  .intro {
+    max-width: 44rem;
+    margin: 1.1rem 0 0;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  }
+
+  .games { display: grid; gap: 1rem; }
 
   .game {
-    padding: 2.2rem 0;
-    border-top: 1px solid var(--pine-light);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(73, 55, 34, 0.055);
   }
 
-  .game:first-of-type { border-top: none; }
-
-  .game h2 { font-size: 1.5rem; }
+  .game h2, .support h2 {
+    margin: 0;
+    font-size: clamp(1.45rem, 4vw, 1.8rem);
+    line-height: 1.25;
+    font-weight: 700;
+  }
 
   .tagline {
-    color: var(--river);
-    font-size: 0.95rem;
-    margin: 0.35rem 0 0.9rem;
-  }
-
-  .game p.desc {
-    max-width: 46ch;
-    margin: 0 0 0.9rem;
+    margin: 0.25rem 0 1.15rem;
+    color: var(--green);
+    font-size: 0.93rem;
+    font-weight: 600;
   }
 
   .game-content {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin: 0.9rem 0;
+    gap: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 1.2rem;
   }
 
   .game-content .desc {
     flex: 1;
+    max-width: 48ch;
     margin: 0;
+    color: #55554f;
   }
 
   .game-icon {
-    width: 112px;
-    height: 112px;
-    flex-shrink: 0;
-    object-fit: cover;
-    border: 2px solid var(--pine-light);
-    border-radius: 16px;
-    padding: 5px;
-    background: var(--pine);
-  }
-
-  @media (max-width: 420px) {
-    .game-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 13px;
-    }
-
-    .game-content {
-      gap: 1rem;
-      align-items: flex-start;
-    }
-  }
-
-  .game a.store-link {
-    color: var(--rust);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid currentColor;
-  }
-
-  .river-divider {
     display: block;
-    width: 100%;
-    height: 28px;
-    margin: 1.5rem 0 2.5rem;
+    width: clamp(88px, 21vw, 116px);
+    height: clamp(88px, 21vw, 116px);
+    flex: 0 0 auto;
+    object-fit: cover;
+    padding: 4px;
+    border: 1px solid #ead9c8;
+    border-radius: 22px;
+    background: var(--soft);
+    box-shadow: 0 7px 18px rgba(72, 48, 26, 0.12);
   }
 
-  .river-divider path {
-    fill: none;
-    stroke: var(--river);
-    stroke-width: 2;
-    stroke-linecap: round;
-  }
-
-  section.support {
-    padding-top: 0.5rem;
-  }
-
-  section.support h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-
-  .plaque {
-    margin-top: 1.2rem;
-    padding: 1.1rem 1.3rem;
-    border: 1px solid var(--pine-light);
-    border-left: 3px solid var(--rust);
-  }
-
-  .plaque a {
-    color: var(--cream);
-    font-weight: 600;
+  .store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent-dark);
+    font-size: 0.92rem;
+    font-weight: 700;
     text-decoration: none;
-    border-bottom: 1px solid var(--rust);
   }
 
-  .plaque p { margin: 0.4rem 0 0; color: var(--cream-dim); font-size: 0.92rem; }
+  .store-link::after { content: "↗"; font-size: 1rem; }
+  .store-link:hover, footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .support {
+    margin-top: 3.5rem;
+    padding: clamp(1.4rem, 5vw, 2rem);
+    border: 1px solid #f0dfcd;
+    border-radius: 22px;
+    background: #fbf1e7;
+  }
+
+  .support h2 { margin-bottom: 0.45rem; }
+  .support > p { max-width: 54ch; margin: 0; color: #5d5a54; }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid #ead8c5;
+  }
+
+  .contact-row p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 150ms ease, transform 150ms ease;
+  }
+
+  .email-link:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
   footer {
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--pine-light);
-    font-size: 0.85rem;
-    color: var(--cream-dim);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.84rem;
   }
 
-  footer a { color: var(--cream-dim); }
+  footer p { margin: 0; }
+  footer a { color: inherit; }
 
-  a:focus-visible, a.store-link:focus-visible {
-    outline: 2px solid var(--river);
-    outline-offset: 3px;
+  a:focus-visible {
+    outline: 3px solid #d99b7e;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 520px) {
+    main { padding-top: 3rem; }
+    .game { border-radius: 18px; }
+    .game-content { align-items: flex-start; }
+    .game-icon { border-radius: 18px; }
+    .contact-row { align-items: flex-start; flex-direction: column; }
+    footer { flex-direction: column; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    * { scroll-behavior: auto !important; }
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   }
 </style>
 </head>
 <body>
 <main>
+  <header class="hero">
+    <p class="kicker">Independent games by Patrick Fluke</p>
+    <h1>Patrick Fluke</h1>
+    <p class="intro">Two small games, one dam, and a very short list of ways things go wrong.</p>
+  </header>
 
-  <div class="kicker">Support & information</div>
-  <h1>Two small games, one dam, and a very short list of ways things go wrong.</h1>
+  <section class="games" aria-label="Games">
+    <article class="game">
+      <h2>Beaver Rage</h2>
+      <p class="tagline">Arcade defense, iOS &amp; macOS</p>
+      <div class="game-content">
+        <p class="desc">A brave beaver makes a final stand and defends his dam from the titans of industry by hurling ill gotten TNT at anything that floats too close. Free to play, with a one-time in-app purchase to remove ads.</p>
+        <img class="game-icon" src="BRIcon.png" alt="Beaver Rage app icon">
+      </div>
+      <a class="store-link" href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://apps.apple.com/us/app/beaver-rage-dam-defence/id6785056901">View on the App Store</a>
+    </article>
 
-  <div class="game">
-    <h2>Beaver Rage</h2>
-    <p class="tagline">Arcade defense, iOS &amp; macOS</p>
-    <div class="game-content">
-      <p class="desc">A brave beaver makes a final stand and defends his dam from the titans of industry by hurling ill gotten TNT at anything that floats too close. Free to play, with a one-time in-app purchase to remove ads.</p>
-      <img class="game-icon" src="BRIcon.png" alt="Beaver Rage app icon">
-    </div>
-    <a class="store-link" href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://apps.apple.com/us/app/beaver-rage-dam-defence/id6785056901">View on the App Store</a>
-  </div>
-
-  <div class="game">
-    <h2>Nimbus Lagoon</h2>
-    <p class="tagline">Arcade defense, iOS </p>
-    <div class="game-content">
-      <p class="desc">What started as a perfect beach day has taken a turn, and the clouds are darkening the skies. Roll up your sleeves, man the crystal, and blast those clouds keeping the day sunny and long!</p>
-      <img class="game-icon" src="NLIcon.png" alt="Nimbus Lagoon app icon">
-    </div>
-    <a class="store-link" href="https://apps.apple.com/us/app/nimbus-lagoon/id1107691164">View on the App Store</a>
-  </div>
-
-  <svg class="river-divider" viewBox="0 0 600 28" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,14 C60,4 120,24 180,14 C240,4 300,24 360,14 C420,4 480,24 540,14 C570,9 585,19 600,14"/>
-  </svg>
+    <article class="game">
+      <h2>Nimbus Lagoon</h2>
+      <p class="tagline">Arcade defense, iOS </p>
+      <div class="game-content">
+        <p class="desc">What started as a perfect beach day has taken a turn, and the clouds are darkening the skies. Roll up your sleeves, man the crystal, and blast those clouds keeping the day sunny and long!</p>
+        <img class="game-icon" src="NLIcon.png" alt="Nimbus Lagoon app icon">
+      </div>
+      <a class="store-link" href="https://apps.apple.com/us/app/nimbus-lagoon/id1107691164">View on the App Store</a>
+    </article>
+  </section>
 
   <section class="support">
     <h2>Need help?</h2>
     <p>If something's broken, a level won't load, or an ad won't go away after you paid to remove it &mdash; email me and I'll sort it out.</p>
-    <div class="plaque">
-      <a href="mailto:pillar_rebukes6n@icloud.com">pillar_rebukes6n@icloud.com</a>
+    <div class="contact-row">
       <p>Usually get back to you within a few days.</p>
+      <a class="email-link" href="mailto:pillar_rebukes6n@icloud.com">Email me</a>
     </div>
   </section>
 
   <footer>
-    &copy; 2026. Support page for iOS &amp; macOS titles. &middot; <a href="privacy.html">Privacy Policy</a>
+    <p>&copy; 2026 Patrick Fluke. Support page for iOS &amp; macOS titles.</p>
+    <a href="privacy.html">Privacy Policy</a>
   </footer>
-
 </main>
 </body>
 </html>
